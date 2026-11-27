@@ -55,4 +55,9 @@ public class PathLabTest {
         assertEquals(0, lab.loopPaths(0));
         assertEquals(18, lab.loopPaths(10));
     }
+
+    @Test
+    public void narrowWindowExcludesItsLowerEdge() {
+        assertEquals(10, lab.narrowWindow(10));
+    }
 }
