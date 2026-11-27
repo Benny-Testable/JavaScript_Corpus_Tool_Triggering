@@ -37,4 +37,9 @@ public class DefUseLabTest {
     public void loopUseSumsPositiveValues() {
         assertEquals(9, lab.loopUse(new int[] {4, -1, 5, 0}));
     }
+
+    @Test
+    public void multipleDefsDoublesOnlyAboveFive() {
+        assertEquals(6, lab.multipleDefs(5));
+    }
 }
