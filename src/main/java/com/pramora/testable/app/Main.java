@@ -10,9 +10,8 @@ import com.pramora.testable.service.PricingService;
 import com.pramora.testable.util.InputSanitizer;
 
 /**
- * Prices one demo order and returns the summary as text. It has no command-line
- * entry point and writes nothing to the console: callers decide what to do with
- * the summary, so the application exposes no input or output channel of its own.
+ * Prices one demo order. {@link #summary(String)} returns the summary as text and
+ * {@link #main(String[])} prints it, taking the order reference from the command line.
  */
 public final class Main {
 
@@ -22,6 +21,11 @@ public final class Main {
     private static final long SECOND_LINE_CENTS = 4999L;
 
     private Main() {
+    }
+
+    /** Command-line entry point, run as {@code java -jar <artifact> O-1234}. */
+    public static void main(String[] args) {
+        System.out.print(summary(args.length == 0 ? null : args[0]));
     }
 
     /** Builds the demo order for {@code reference} and returns its priced summary. */

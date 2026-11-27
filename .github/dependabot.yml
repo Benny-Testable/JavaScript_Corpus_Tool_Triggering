@@ -1,0 +1,9 @@
+# Dependency monitoring. The pull request limit is 0, so version-update pull requests are not
+# opened: this branch keeps its dependency versions on purpose.
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
