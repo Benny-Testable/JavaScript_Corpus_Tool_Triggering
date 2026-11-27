@@ -67,4 +67,10 @@ public class PricingServiceTest {
         Order o = order(LoyaltyTier.SILVER, 5, 100L, 2);
         assertFalse(service.isBulkOrder(o));
     }
+
+    @Test
+    public void shippingIsFreeExactlyAtTheThresholds() {
+        assertEquals(0L, service.shippingCents(order(LoyaltyTier.STANDARD, 5, 100L, 1), 5000L));
+        assertEquals(0L, service.shippingCents(order(LoyaltyTier.GOLD, 5, 100L, 1), 2500L));
+    }
 }
