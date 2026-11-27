@@ -30,4 +30,12 @@ public class LintLabTest {
     public void logDoesNotThrow() {
         lab.log("lint lab");
     }
+
+    @Test
+    public void describeCoversEveryNamedCode() {
+        String[] words = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"};
+        for (int code = 1; code <= words.length; code++) {
+            assertEquals(words[code - 1], lab.describe(code));
+        }
+    }
 }
