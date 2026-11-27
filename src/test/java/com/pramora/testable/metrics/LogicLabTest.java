@@ -45,4 +45,9 @@ public class LogicLabTest {
         assertEquals(-1, lab.daysInMonth(13, 2024));
         assertEquals(-1, lab.daysInMonth(0, 2024));
     }
+
+    @Test
+    public void decemberIsTheLastMonth() {
+        assertEquals(31, lab.daysInMonth(12, 2024));
+    }
 }
