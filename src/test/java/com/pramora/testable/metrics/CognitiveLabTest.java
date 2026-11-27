@@ -29,4 +29,20 @@ public class CognitiveLabTest {
         assertEquals(1, lab.collatzSteps(2));
         assertEquals(6, lab.collatzSteps(10));
     }
+
+    @Test
+    public void scoreMatrixIgnoresACellEqualToTheThreshold() {
+        assertEquals(0, lab.scoreMatrix(new int[][] {{2}}, 2));
+    }
+
+    @Test
+    public void scoreMatrixHandlesTheFirstColumnOfAnOddRow() {
+        assertEquals(5, lab.scoreMatrix(new int[][] {{5}, {5}}, 2));
+    }
+
+    @Test
+    public void scoreMatrixAlternatesByRowAndColumn() {
+        int[][] grid = {{5, 5, 5}, {5, 5, 5}, {5, 5, 5}};
+        assertEquals(22, lab.scoreMatrix(grid, 2));
+    }
 }
