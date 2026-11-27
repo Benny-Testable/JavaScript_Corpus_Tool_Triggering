@@ -22,7 +22,6 @@ public class DuplicateProcessorC {
         }
         return order.getLines().stream()
                 .mapToLong(OrderLine::extendedCents)
-                .filter(extended -> extended > 0L)
                 .map(this::applyBulkRelief)
                 .map(this::round)
                 .sum();
